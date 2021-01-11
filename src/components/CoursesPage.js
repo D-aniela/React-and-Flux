@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 //Llamara a nuestro mock api para obtener la lista de cursos
 import { getCourses } from "../api/courseApi";
 import CourseList from "./CoursesList";
+import { Link } from "react-router-dom";
 
 function CoursesPage() {
   //useState hook, returns an array with two values
@@ -19,6 +20,9 @@ function CoursesPage() {
   return (
     <>
       <h2>Courses</h2>
+      <Link className="btn btn-primary" to="/course">
+        Add course
+      </Link>
       <CourseList courses={courses} />
     </>
   );
